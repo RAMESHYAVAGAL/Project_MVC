@@ -201,7 +201,53 @@ public class Registration {
 	       }
 	       return status;
 	   }
+	public String getPassword(String email,String oldPass) {
+		// TODO Auto-generated method stub
+		       String status = "";
+		       PreparedStatement ps = null;
+		       ResultSet rs = null;
+		       String query = "select * from sookshmas1 where email=? and password=?";
+		       try {
+		           ps = con.prepareStatement(query);
+		           ps.setString(1, email);
+		           ps.setString(2, oldPass);
+		           rs = ps.executeQuery();
+		           if (rs.next()) {
+		               //se.setAttribute("pwd", rs.getString(5));
+		               status = "success";
+		           } else {
+		               status = "failed";
+		           }
+		       } catch (SQLException e) {
+		           e.printStackTrace();
+		       }
+		       //System.out.println(status);
+		       return status;
+		   }
+		// It Reset the user Password
 
+
+	public String resetPassword(String email, String pwd) {
+		// TODO Auto-generated method stub
+		       String status = "";
+		       PreparedStatement ps = null;
+		       boolean res;
+		       try {
+		           ps = con.prepareStatement("update sookshmas1 set password =  ? where  email =  ?");
+		           ps.setString(1, pwd);
+		           ps.setString(2, email);
+		           int rc = ps.executeUpdate();
+		           if (rc > 0) {
+		               status = "success";
+		           } else {
+		               status = "failed";
+		           }
+		       } catch (SQLException e) {
+		// TODO Auto-generated catch block
+		           e.printStackTrace();
+		       }
+		       return status;
+		   }
 
 
 

@@ -92,7 +92,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary" name="login">Submit</button>
                 <div style="text-align: center; margin-top: 15px;">
-                    <a href="Forgot.jsp">Forgot password?</a>
+                    <a href="Forgot.jsp">Forgot password?</a>&nbsp;/&nbsp;<a href="ChangePass.jsp">Reset Password</a>
                 </div>
             </div>
         </form>

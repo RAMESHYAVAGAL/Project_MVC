@@ -110,9 +110,40 @@ public class register extends HttpServlet {
                     rd.forward(request, response);
                 }
             }
+            else if (request.getParameter("reset") != null) {
+                String eamil = request.getParameter("email");
+                String opw = request.getParameter("opw");
+                String npw = request.getParameter("npw");
+                if (opw.equals(npw)) {
+
+                    String s = reg.getPassword(eamil, opw);
+                    //System.out.println("Hi");
+                    if (s.equals("success") && (opw.equals(npw))) {
+                        //if (opw.equals(npw)) {
+                        request.setAttribute("status", "New Passwordis same as old Password");
+                        RequestDispatcher rd = request.getRequestDispatcher("ChangePass.jsp");
+                        rd.forward(request, response);
+                        //} 
+                    }
+                } else {
+                    System.out.println("Inside reset");
+                    String status = reg.resetPassword(eamil, npw);
+                    System.out.println(status);
+                     if (status.equals("success")) 
+                        request.setAttribute("status", "Password changed successfully");
+                        RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+                        rd.forward(request, response);
+//                             } else  {
+//                                 request.setAttribute("status", "Both Are same ");
+//                                 RequestDispatcher rd = request.getRequestDispatcher("changePass.jsp");
+//                                 rd.forward(request, response);
+//                             }
+                }
+
             
 
-        } 
+            }
+            }
         catch (Exception e) {
             e.printStackTrace();
         }
