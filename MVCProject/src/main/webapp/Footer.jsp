@@ -22,7 +22,7 @@
     </style>
     <body>
         <div class="footer">
-            <p>© 2021 Sookshmas | A project by Sookshmas E-Learning Pvt. Ltd.</p>
+            <p>© 2025 Sookshmas | A project by Sookshmas E-Learning Pvt. Ltd.</p>
         </div>
     </body>
 </html>
