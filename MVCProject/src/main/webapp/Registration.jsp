@@ -110,26 +110,26 @@
             <table>
                 <tr>
                     <td> NAME  </td>
-                    <td> <input type="text" id="name" name="name"></td>
+                    <td> <input type="text" id="name" name="name"><br></td>
                 </tr>   
                 <tr>
                     <td> PHONE NUMBER   </td>
-                    <td> <input type="number" name="phone" > </td>
+                    <td> <input type="number" name="phone" > <br></td>
                 </tr>
                 <tr>
                     <td> Email  </td>
-                    <td>   <input type="email" name="email"></td>
+                    <td>   <input type="email" name="email"><br></td>
                 </tr>
                 <tr>
                     <td> Password  </td>
-                    <td>   <input type="password" id="pw" name="pw"></td>
+                    <td>   <input type="password" id="pw" name="pw"><br></td>
                 </tr>
                 <tr>
                     <td> Confirm Password  </td>
-                    <td>   <input type="password" name="cp"></td> 
+                    <td>   <input type="password" name="cp"><br></td> 
                 </tr>
                 <tr>
-                    <td> </br> <input type="submit" name="register" value="Register"></td>
+                    <td> </br> <input type="submit" name="register" value="Register"><br></td>
                 </tr>
             </table>
         </form>
